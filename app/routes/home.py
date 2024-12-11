@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, session, redirect, url_for
 from database.database_manager import database_manager
 
 home_bp = Blueprint('home', __name__)
-
+#BRI
 @home_bp.route('/home')
 def home():
     # Verifica si el usuario está autenticado
