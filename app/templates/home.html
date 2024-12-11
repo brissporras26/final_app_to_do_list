@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="../static/home_styles.css">
+    <link rel="stylesheet" href="../static/task_form_styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>To-Do List</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home.home') }}">Home</a></li>
+                <li><a href="{{ url_for('user.get_user') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="task-list">
+            <label for="show-task-form" class="add-task-button">Add+</label>
+            <input type="checkbox" id="show-task-form" style="display: none;">
+
+            <div class="task-form">
+                <form action="{{ url_for('task.add_task') }}" method="POST">
+                    <label for="task-name">Task Name:</label>
+                    <input type="text" id="task-name" name="task_name" required>
+                    
+                    <label for="task-priority">Priority:</label>
+                    <select id="task-priority" name="task_priority" required>
+                        <option value="high">High (Red)</option>
+                        <option value="medium">Medium (Yellow)</option>
+                        <option value="low">Low (Green)</option>
+                    </select>
+                    
+                    <button type="submit" class="submit-task-button">Add Task</button>
+                </form>
+            </div>
+            
+            <ul>
+                {% for task in tasks %}
+                    <li class="task {{ task.priority }}-priority">
+                        <span>{{ task.name }}</span>
+                        <div class="task-actions">
+                            <button>
+                              <label for="show-edit-task-form-{{ task._id }}" class="edit-task">Update</label>
+                            </button>
+                            <input type="checkbox" id="show-edit-task-form-{{ task._id }}" style="display: none;">
+
+                            <div class="edit-task-form">
+                                <form action="{{ url_for('task.edit_task', task_id=task._id) }}" method="POST">
+                                    <label for="edit-task-name-{{ task._id }}">Task Name:</label>
+                                    <input type="text" id="edit-task-name-{{ task._id }}" name="new_name" value="{{ task.name }}" required>
+                                    
+                                    <label for="edit-task-priority-{{ task._id }}">Priority:</label>
+                                    <select id="edit-task-priority-{{ task._id }}" name="new_priority" required>
+                                        <option value="high" {% if task.priority == 'high' %}selected{% endif %}>High (Red)</option>
+                                        <option value="medium" {% if task.priority == 'medium' %}selected{% endif %}>Medium (Yellow)</option>
+                                        <option value="low" {% if task.priority == 'low' %}selected{% endif %}>Low (Green)</option>
+                                    </select>
+                                    
+                                    <button type="submit" class="submit-task-button">Update Task</button>
+                                </form>
+                            </div>
+                            
+                            <form action="{{ url_for('task.delete_task', task_id=task._id) }}" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="delete-task-button">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

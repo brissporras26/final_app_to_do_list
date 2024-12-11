@@ -1,0 +1,50 @@
+.task-form,
+.edit-task-form {
+    display: none; /* Ocultar el formulario inicialmente */
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Cambia el selector para usar un atributo de prefijo que coincida con cualquier ID que comience con 'show-edit-task-form-' */
+input[id^="show-task-form"]:checked ~ .task-form,
+input[id^="show-edit-task-form-"]:checked + .edit-task-form {
+    display: block; /* Mostrar el formulario si el checkbox está seleccionado */
+}
+
+.task-form label,
+.edit-task-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.task-form input,
+.task-form select, 
+.edit-task-form input,
+.edit-task-form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.submit-task-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.submit-task-button:hover {
+    background-color: #45a049;
+}

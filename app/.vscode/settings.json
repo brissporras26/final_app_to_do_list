@@ -1,0 +1,28 @@
+{
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "explorer.confirmDelete": false,
+    "vscode-pets.petColor": "yellow",
+    "vscode-pets.petSize": "medium",
+    "vscode-pets.petType": "chicken",
+    "window.titleBarStyle": "custom",
+    "workbench.colorTheme": "Default Dark+",
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "chatgpt.lang": "en",
+    "workbench.colorCustomizations": {
+        "terminal.background": "#00000000"
+    },
+    "workbench.settings.applyToAllProfiles": [
+        "workbench.colorCustomizations"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=79"
+    ]
+}

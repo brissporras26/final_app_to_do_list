@@ -1,0 +1,148 @@
+/* Estilos para el encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffb3b3;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.login-button {
+    background-color: #fff;
+    color: #ffb3b3;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para el botón de agregar tarea */
+.add-task-button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 0 20px auto;
+}
+
+.add-task-button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para la lista de tareas */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task {
+    background-color: #f1f1f1;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Estilos para las acciones de la tarea */
+.task-actions button {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.task-actions button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Estilos para prioridades */
+.high-priority {
+    border-left: 5px solid #ff4d4d;
+}
+
+.medium-priority {
+    border-left: 5px solid #ffeb3b;
+}
+
+.low-priority {
+    border-left: 5px solid #4caf50;
+}
+
+/* Estilos para el formulario de edición */
+.edit-task-form {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-task-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.edit-task-form input[type="text"],
+.edit-task-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-task-form button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-task-form button:hover {
+    background-color: #45a049;
+}
+
+/* Mostrar el formulario de edición cuando el botón de editar es clickeado */
+.edit-task.active ~ .edit-task-form {
+    display: block;
+}
